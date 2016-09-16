@@ -41,7 +41,11 @@ int main()
 	}
 	else if ( choice == 2)
 	{
-		cout << "Run Simulation" << endl;
+		int day = 1;
+		oxygenCount = 100;
+		wasteCount = 0;
+		bool missionSuccess = true;
+		cout << "Running Simulation" << endl;
 	}
 	else if (choice == 3)
 	{
