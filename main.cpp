@@ -46,6 +46,25 @@ int main()
 		wasteCount = 0;
 		bool missionSuccess = true;
 		cout << "Running Simulation" << endl;
+		
+		while (day <= missionLength)
+		{
+			cout << "Day " << day << " of 10: " << endl;
+			cout << "     " << foodGrown_PerDay << " units of food grown" << endl;
+			cout << "     " << foodConsumed_PerPersonPerDay << " units of food consumed" << endl;
+			cout << "     " << endl;
+			cout << "     " << wasteCreated_PerPersonPerDay << " units of waste created" << endl;
+			cout << "     " << cleanup_PerPersonPerDay << " units of waste cleaned up" << endl;
+			cout << "     " << endl;
+			cout << "     " << oxygenCreated_PerDay << " units of oxygen produced" << endl;
+			cout << "     " << oxygenUsed_PerPersonPerDay << " units oxygen used" << endl;
+			cout << "     " << endl;
+			
+			foodCount = foodGrown_PerDay - (foodConsumed_PerPersonPerDay * peopleCount);
+			wasteCount = (wasteCreated_PerPersonPerDay * peopleCount) - (cleanup_PerPersonPerDay * peopleCount);
+			oxygenCount = oxygenCreated_PerDay - (oxygenUsed_PerPersonPerDay * peopleCount);
+
+			cout << "Status: " << foodCount << " food, " << wasteCount << " waste, " << oxygenCount << " oxygen. " << endl;
 	}
 	else if (choice == 3)
 	{
