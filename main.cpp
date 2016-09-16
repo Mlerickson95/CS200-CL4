@@ -65,6 +65,35 @@ int main()
 			oxygenCount = oxygenCreated_PerDay - (oxygenUsed_PerPersonPerDay * peopleCount);
 
 			cout << "Status: " << foodCount << " food, " << wasteCount << " waste, " << oxygenCount << " oxygen. " << endl;
+							cout << "----------------------" << endl;
+
+				if (foodCount < 0)
+				{
+					cout << "Ran out of food" << endl;
+					missionSuccess = false;
+				}
+
+				if (wasteCount > 20)
+				{
+					cout << "Too much waste" << endl;
+					missionSuccess = false;
+				}
+
+				if (oxygenCount < 0)
+				{
+					cout << "Ran out of oxygen" << endl;
+					missionSuccess = false;
+				}
+				day++;
+			}
+			if (missionSuccess == true)
+			{
+				cout << "MISSION SUCCESSFUL" << endl;
+			}
+			else
+			{
+				cout << "MISSION FAILED" << endl;
+			}
 	}
 	else if (choice == 3)
 	{
